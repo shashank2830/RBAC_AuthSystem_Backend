@@ -34,30 +34,34 @@ This project is an RBAC (Role-Based Access Control) backend system designed to p
       * Expiring JWT tokens to enhance session security.
       * Input validation to prevent common vulnerabilities like SQL injection.
     
-#  API Endpoints 
-  # Authentication
+# API Endpoints
 
-  Method	    Endpoint	            Description
-  POST	   /auth/register	       Register a new user
-  POST	   /auth/login	          Log in a user
-  POST	   /auth/logout	          Log out the user
+## Authentication
 
-  # RBAC
+| Method | Endpoint                        | Description                            |
+|--------|----------------------------------|----------------------------------------|
+| POST   | `/auth/register`                 | Register a new user                   |
+| POST   | `/auth/login`                    | Login and get JWT token               |
+| POST   | `/auth/request-reset`            | Request a password reset email        |
+| PUT    | `/auth/reset-password/:token`    | Reset password using the reset token  |
+| GET    | `/auth/google`                   | Initiate Google OAuth login           |
+| GET    | `/auth/google/callback`          | Handle Google OAuth callback          |
 
-   Method	    Endpoint	            Description
-    GET	      /admin	            Accessed by admin
-    GET	      /moderator	        Accessed by admin & moderator
-    GET	      /user	              Accessed by admin , moderator & user
+## Protected Routes (Role-Based Access)
 
-#  Password Reset
-  Method	        Endpoint	                          Description
-  POST	        /auth/request-reset	              Request a password reset link
-  PUT	          /auth/reset-password/:token	      Reset password using token
+| Method | Endpoint                        | Description                            | Roles Allowed      |
+|--------|----------------------------------|----------------------------------------|--------------------|
+| GET    | `/protected`                     | Access a protected route               | User, Admin, Moderator |
+| GET    | `/admin`                         | Access admin route                     | Admin              |
+| GET    | `/moderator`                     | Access moderator route                 | Moderator, Admin   |
+| GET    | `/user`                          | Access user route                      | User, Moderator, Admin |
 
-#  Google OAuth
-  Method	       Endpoint	                       Description
-    GET	       /auth/google	                 Initiate Google login
-    GET	      /auth/google/callback	         Handle Google OAuth callback4
+## Account Lockout & Failed Attempts
+
+| Method | Endpoint                        | Description                            |
+|--------|----------------------------------|----------------------------------------|
+| POST   | `/auth/login`                    | Login, with account lockout after multiple failed attempts |
+
 
 
 #  Project Setup 
