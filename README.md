@@ -2,7 +2,7 @@
 
 This project is an RBAC (Role-Based Access Control) backend system designed to provide a secure and robust authentication and authorization mechanism. The system implements user role management and offers additional features to enhance security and user management. Developed using Node.js, this backend system adheres to modern security best practices and is tailored to meet the requirements of VRV Security.
 
-# <------------------ Features --------------------------->
+#  Features 
 
 # Core Functionalities
  1) Authentication:
@@ -34,7 +34,7 @@ This project is an RBAC (Role-Based Access Control) backend system designed to p
       * Expiring JWT tokens to enhance session security.
       * Input validation to prevent common vulnerabilities like SQL injection.
     
-# <--------------------- API Endpoints --------------------------->
+#  API Endpoints 
   # Authentication
 
   Method	    Endpoint	            Description
@@ -60,7 +60,7 @@ This project is an RBAC (Role-Based Access Control) backend system designed to p
     GET	      /auth/google/callback	         Handle Google OAuth callback4
 
 
-# <-------------------- Project Setup ----------------------->
+#  Project Setup 
 
 1) Clone the repo and go the project directory
 2) npm install
@@ -82,7 +82,7 @@ This project is an RBAC (Role-Based Access Control) backend system designed to p
 
  4) Start the server using command : "nodemon server.js"
 
-# <----------------------- File System ------------------------>
+#  File System 
 
 auth-system/
 ├── server.js
