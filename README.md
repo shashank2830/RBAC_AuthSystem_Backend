@@ -82,25 +82,6 @@ This project is an RBAC (Role-Based Access Control) backend system designed to p
 
  4) Start the server using command : "nodemon server.js"
 
-#  File System 
-
-auth-system/
-├── server.js
-├── auth/
-│   └── passport.js
-├── config/
-│   └── db.js
-├── models/
-│   └── User.js
-├── routes/
-│   └── authRoutes.js
-├── middleware/
-│   ├── authMiddleware.js
-│   └── roleMiddleware.js
-├── utils/
-│   └── token.js
-|   └── email.js
-└── .env
 
 
 
